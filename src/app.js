@@ -38,7 +38,7 @@ app.get('/about', (req, res) => {
 app.get('/help', (req, res) => {
     res.render('help', {
         title: 'Help',
-        message: 'I can not help you..',
+        message: "I can't help",
         name: 'Beyza Ozan'
     })
 })
@@ -62,6 +62,7 @@ app.get('/weather', (req, res) => {
             res.send({
                 address: location,
                 forecast: forecastData,
+                coordinates: {latitude, longitude}
             })
         })
     })
@@ -97,5 +98,5 @@ app.get('*', (req, res) => {
 })
 
 app.listen(port, () => {
-    console.log('Server is up on port'+ port)
+    console.log('Server is up on port '+ port)
 })
